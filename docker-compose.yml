@@ -1,0 +1,66 @@
+#version: '3'
+#services:
+#  db:
+#    image: postgres
+#    environment: 
+#        POSTGRES_USER: postgres
+#        POSTGRES_PASSWORD: 1234
+#    volumes:
+#      - ./tmp/db:/var/lib/postgresql/data
+#  web:
+#    build: .
+#    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+#    volumes:
+#      - .:/myapp
+#    ports:
+#      - "3000:3000"
+#    depends_on:
+#      - db
+
+
+version: '3'
+
+services:
+    api:
+        build: .
+        command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails db:setup && bundle exec rails s -p 3000 -b '0.0.0.0'"
+        volumes:
+            - .:/myapp
+        ports:
+            - "3000:3000"
+        depends_on:
+            - db
+        links:
+            - db
+        networks:
+            - studycenter
+
+    db:
+        image: postgres
+        environment: 
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: 1234
+        networks:
+            - studycenter
+
+    pgadmin:
+        image: dpage/pgadmin4
+        depends_on:
+            - db
+        ports:
+            - "5556:80"
+        links:
+            - db
+        environment:
+            PGADMIN_DEFAULT_EMAIL: pgadmin4@pgadmin.org
+            PGADMIN_DEFAULT_PASSWORD: 1234
+        restart: unless-stopped
+        networks:
+            - studycenter
+            
+volumes:
+    database_postgres:
+
+networks:
+    studycenter:
+        driver: bridge
