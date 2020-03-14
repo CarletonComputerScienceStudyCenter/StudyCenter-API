@@ -1,5 +1,5 @@
 module Types
-    class QuizType < Types::BaseObject
+    class CourseType < Types::BaseObject
       field :id, ID, null: false
       field :title, String, null: false
       field :code, String, null: false
