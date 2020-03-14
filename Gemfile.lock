@@ -66,6 +66,14 @@ GEM
     ffi (1.12.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    graphql (1.8.13)
+    graphql-errors (0.4.0)
+      graphql (>= 1.6.0, < 2)
+    graphql-rails_logger (1.2.2)
+      actionpack (> 5.0)
+      activesupport (> 5.0)
+      railties (> 5.0)
+      rouge (~> 3.0)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     listen (3.1.5)
@@ -92,6 +100,8 @@ GEM
     puma (4.3.3)
       nio4r (~> 2.0)
     rack (2.2.2)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (6.0.2.1)
@@ -124,6 +134,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    rouge (3.15.0)
     ruby_dep (1.5.0)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
@@ -151,9 +162,13 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
+  graphql (= 1.8.13)
+  graphql-errors
+  graphql-rails_logger
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)
+  rack-cors
   rails (~> 6.0.2, >= 6.0.2.1)
   spring
   spring-watcher-listen (~> 2.0.0)
