@@ -3,17 +3,25 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password: 1234
 
 development:
   <<: *default
   database: studycenter_api_development
+  username: postgres
+  password: 1234
 
 test:
   <<: *default
   database: studycenter_api_test
+  username: postgres
+  password: 1234
 
 production:
   <<: *default
   database: studycenter_api_production
   username: studycenter_api
   password: <%= ENV['STUDYCENTER_API_DATABASE_PASSWORD'] %>
+  username: postgres
+  password: 1234
