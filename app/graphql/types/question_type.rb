@@ -9,7 +9,7 @@ module Types
       field :answers, [Types::AnswerType], null: true
 
       def correct_answer 
-        self.object.question_answers.where(:correct => true)[0].answer
+        self.object.question_answers.where(:correct => false)[0].answer #change :correct=> false to true when done testing
       end
     end
 end
