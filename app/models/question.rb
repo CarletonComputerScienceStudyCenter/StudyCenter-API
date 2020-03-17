@@ -10,5 +10,4 @@ class Question < ApplicationRecord
         self.answers.destroy_all
         self.quiz_questions.destroy_all
     end
-
 end
