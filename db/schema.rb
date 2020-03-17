@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_16_171743) do
+ActiveRecord::Schema.define(version: 2020_03_17_150956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_03_16_171743) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "answer_id"
     t.bigint "question_id"
+    t.boolean "disabled"
     t.index ["answer_id"], name: "index_question_answers_on_answer_id"
     t.index ["question_id"], name: "index_question_answers_on_question_id"
   end
@@ -46,6 +47,7 @@ ActiveRecord::Schema.define(version: 2020_03_16_171743) do
     t.string "render"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "shuffle"
   end
 
   create_table "quiz_questions", force: :cascade do |t|
@@ -54,6 +56,7 @@ ActiveRecord::Schema.define(version: 2020_03_16_171743) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "quiz_id"
     t.bigint "question_id"
+    t.boolean "disabled"
     t.index ["question_id"], name: "index_quiz_questions_on_question_id"
     t.index ["quiz_id"], name: "index_quiz_questions_on_quiz_id"
   end
@@ -64,6 +67,7 @@ ActiveRecord::Schema.define(version: 2020_03_16_171743) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "course_id"
+    t.boolean "shuffle"
     t.index ["course_id"], name: "index_quizzes_on_course_id"
   end
 
