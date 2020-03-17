@@ -1,0 +1,1 @@
+heroku pg:reset --app computersciencestudycenter --confirm computersciencestudycenter
