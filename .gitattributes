@@ -1,3 +1,4 @@
 *dockerfile linguist-language=Dockerfile
-*.sh linguist-language=Shell
+*.sh linguist-language=Dockerfile
+*.html linguist-language=Dockerfile
 *docker-compsoe.yml linguist-language=Dockerfile
