@@ -8,6 +8,14 @@ module Types
       field :quizzes, [Types::QuizType], null: true
       field :answers, [Types::AnswerType], null: true
 
+      def quizzes
+        Loaders::HasManyLoader.for(Question, :quizzes).load(object)
+      end
+
+      def answers 
+        Loaders::HasManyLoader.for(Question, :answers).load(object)
+      end
+      
       def correct_answer 
         self.object.question_answers.where(:correct => false)[0].answer #change :correct=> false to true when done testing
       end
