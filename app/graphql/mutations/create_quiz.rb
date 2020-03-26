@@ -10,10 +10,8 @@ module Mutations
   
       def resolve(title: nil, description: nil, shuffle: nil, question_ids: nil, course_id: nil)
 
-        user = context[:current_user]
-        
-        if user.nil?
-            raise GraphQL::ExecutionError, "ERROR: Missing Permissions"
+        if $sessionManager.get(context[:current_user][:token]).nil?
+          raise GraphQL::ExecutionError, "ERROR: Missing Permissions or session timed out"
         end
 
         quiz = Quiz.create(

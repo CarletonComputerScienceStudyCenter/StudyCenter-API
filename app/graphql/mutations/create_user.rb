@@ -11,10 +11,8 @@ module Mutations
   
       def resolve(first_name: nil, last_name: nil, email: nil, password: nil)
 
-        user = context[:current_user]
-        
-        if user.nil?
-            raise GraphQL::ExecutionError, "ERROR: Missing Permissions"
+        if $sessionManager.get(context[:current_user][:token]).nil?
+          raise GraphQL::ExecutionError, "ERROR: Missing Permissions or session timed out"
         end
 
         User.create!(

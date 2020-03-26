@@ -13,12 +13,15 @@ gem 'puma', '~> 4.1'
 # gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
+gem 'redis'
+gem 'redis-namespace'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'json_web_token', '~> 0.3.5'
 gem 'jwt'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

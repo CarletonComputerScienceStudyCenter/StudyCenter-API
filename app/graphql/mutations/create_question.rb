@@ -3,16 +3,13 @@ module Mutations
       argument :title, String, required: true
       argument :body, String, required: true
       argument :render, String, required: true
-      #argument :quiz_id, ID, required: false
 
       type Types::QuestionType
   
-      def resolve(title: nil, body: nil, render: nil) #quiz_id: nil) 
+      def resolve(title: nil, body: nil, render: nil)
 
-        user = context[:current_user]
-        
-        if user.nil?
-            raise GraphQL::ExecutionError, "ERROR: Missing Permissions"
+        if $sessionManager.get(context[:current_user][:token]).nil?
+            raise GraphQL::ExecutionError, "ERROR: Missing Permissions or session timed out"
         end
 
         question = Question.create(
@@ -21,24 +18,8 @@ module Mutations
           render: render,
         )
         
-        raise GraphQL::ExecutionError, board.errors.full_messages.join(", ") unless question.errors.empty?
-        
-=begin
-        if quiz_id != nil
-            quiz = Quiz.find_by(id: quiz_id)  
+        raise GraphQL::ExecutionError, question.errors.full_messages.join(", ") unless question.errors.empty?
 
-            if quiz.nil?
-                raise GraphQL::ExecutionError, "ERROR: Quiz doesn't exist"
-            end    
-            
-            join = QuizQuestion.create(
-                quiz_id: quiz_id,
-                question_id: question.id,
-            )
-
-            raise GraphQL::ExecutionError, board.errors.full_messages.join(", ") unless join.errors.empty?
-        end
-=end
         question
 
       end

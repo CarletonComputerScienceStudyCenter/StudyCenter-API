@@ -21,7 +21,8 @@ class GraphqlController < ApplicationController
     decrypted = JWT.decode(header,Rails.application.secrets.secret_key_base.byteslice(0..31))[0] #decrypt token using secret key
     currentUser = User.find_by(id: decrypted['id']) #find the user given the decrypted id
 
-    return(currentUser) 
+    #return(currentUser) 
+    { current_user: currentUser, token: header }
 
   rescue JWT::DecodeError
     nil  

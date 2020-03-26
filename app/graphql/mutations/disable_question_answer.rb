@@ -8,10 +8,8 @@ module Mutations
 
         def resolve(question_id: nil, answer_id: nil) 
 
-            user = context[:current_user]
-        
-            if user.nil?
-                raise GraphQL::ExecutionError, "ERROR: Missing Permissions"
+            if $sessionManager.get(context[:current_user][:token]).nil?
+                raise GraphQL::ExecutionError, "ERROR: Missing Permissions or session timed out"
             end
 
             question = Question.find_by(id: question_id)

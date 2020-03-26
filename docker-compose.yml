@@ -10,11 +10,20 @@ services:
             - "3030:3000"
         depends_on:
             - db
+            - redis
         links:
             - db
+            - redis
         networks:
             - studycenter
 
+    redis:
+        image: 'redis:latest'
+        ports:
+            - '6379:6379'
+        networks:
+            - studycenter
+            
     db:
         image: postgres
         environment: 
