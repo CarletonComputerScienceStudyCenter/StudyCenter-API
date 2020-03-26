@@ -1,0 +1,1 @@
+$sessionManager = Redis::Namespace.new("study-center-user-sessions", :redis => Redis.new(host: "redis", port: 6379))

@@ -20,13 +20,11 @@ module Mutations
         
         userID = { id: user.id }
         crypt = JWT.encode(userID, Rails.application.secrets.secret_key_base.byteslice(0..31))
+
+        $sessionManager.set(crypt, user.id)
+        $sessionManager.expire(crypt, 86400)
         
         { user: user, token: crypt }
-
-        #OpenStruct.new({
-        #    user: user, 
-        #    token: crypt
-        #})
 
         end
     end
