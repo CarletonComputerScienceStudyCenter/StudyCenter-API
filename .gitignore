@@ -25,3 +25,5 @@
 
 db/seeds.rb
 db/data.rb
+
+coverage/
