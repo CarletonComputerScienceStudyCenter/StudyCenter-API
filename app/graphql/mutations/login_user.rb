@@ -13,10 +13,12 @@ module Mutations
         
         #validate if that user event exists
         unless user = User.find_by(email:email)
-            return GraphQL::ExecutionError.new("error: no user with that email.");
+            return GraphQL::ExecutionError.new("ERROR: no user with that email.");
         end
 
-        return unless user.authenticate(password) #~bcrypt
+        unless user.authenticate(password) #~bcrypt
+            return GraphQL::ExecutionError.new("ERROR: Incorrect Password");
+        end
         
         userID = { id: user.id }
         crypt = JWT.encode(userID, Rails.application.secrets.secret_key_base.byteslice(0..31))
