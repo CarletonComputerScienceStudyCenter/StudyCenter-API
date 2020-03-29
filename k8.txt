@@ -1,0 +1,24 @@
+
+kompose convert -f docker-compose.yml -o kubemanifests.yaml
+kubectl apply -f kubemanifests.yaml
+kubectl get po 
+docker images | grep studycenter-api
+
+add local container to minikube:
+
+eval $(minikube docker-env)
+docker build -t api .
+
+
+eval "$(docker-machine env default)"
+
+docker tag studycenterapi mathyoumb/studycenterapi
+
+kompose convert -f docker-compose.yml -o kubemanifests.yaml --volumes hostPath
+
+kubectl logs containername
+
+docker push mathyoumb/studycenterapi:1.0  
+
+docker build -t api .
+
