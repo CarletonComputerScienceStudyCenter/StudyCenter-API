@@ -15,12 +15,17 @@ module Mutations
           raise GraphQL::ExecutionError, "ERROR: Missing Permissions or session timed out"
         end
 
-        User.create!(
+        user = User.create(
           first_name: first_name,
           last_name: last_name,
           email: email,
           password: password
         )
+
+        raise GraphQL::ExecutionError, user.errors.full_messages.join(", ") unless user.errors.empty?
+
+        user
+        
       end
     end
   end
