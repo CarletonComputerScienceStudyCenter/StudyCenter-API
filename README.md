@@ -19,6 +19,12 @@ This is the API for the Study Center Project. It's goal is to serve course conte
 - **PostgreSQL**: Relational database. Choosen because Postgres is the database all students learn in the COMP3005 course.
 - **RSpec**: Testing Framework.
 
+## Demo
+
+There is currently a very rough demo being hosted via heroku. The API is being hosted with heroku free hosting and therefore takes up to 25 seconds to load data. 
+
+https://carletoncomputersciencestudycenter.github.io/StudyCenter-Client/#/
+
 ## Schema
 
 <img src="https://i.imgur.com/uklXb6R.png"></img>
