@@ -23,14 +23,14 @@ This is the API for the Study Center Project. It's goal is to serve course conte
 
 <img src="https://i.imgur.com/uklXb6R.png"></img>
 
-* **Answer**: Represents a potential answer to a question.
+* **Answer**: Represents a potential answer to a question
   * **answer (text)**: Contains the display text of this answer. The attribute can be in any render type (plain text, Mathjax, etc.)
-  * **render (string)**: Represents the render type of the answer attribute. The client uses this attribute to properly render desired text.
-* **QuestionAnswer**: The join between Question and Answer.
+  * **render (string)**: Represents the render type of the answer attribute. The client uses this attribute to properly render desired text
+* **QuestionAnswer**: The join between Question and Answer
   * **correct (boolean)**: Represents whether the associated answer (via answer_id) is the correct answer to the associated question
   * **disabled (boolean)**: Represents whether the associated answer should be given to the client on request
-  
-* **Question**: Represents a question.
+ 
+* **Question**: Represents a question
   * **body (text)**: Contains the display text of this question. The attribute can be in any render type (plain text, Mathjax, etc.)
   * **render (string)**: Represents the render type of the body attribute. The client uses this attribute to properly render desired 
   * **shuffle (boolean)**: Represents whether the answers associated with this question should be shuffled or if they should be
