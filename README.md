@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Carleton Computer Science Study Center is a student led project to expand on Carleton's current <a href="http://cglab.ca/~discmath/"> Discrete Math Study Center website</a> and transform it into a responsive multiplatform app. In it's current state, the existing website only has content for a single course and the website itself is incampable with mobile devices. The goal of this project is increase the accesibility of the content of other computer science courses at Carleton and build an easy to use platform so additional content can continously be added.
+The Carleton Computer Science Study Center is a student led project to expand on Carleton's current <a href="http://cglab.ca/~discmath/"> Discrete Math Study Center website</a> and transform it into a responsive multiplatform app. In it's current state, the existing website only has content for a single course and the website itself is incapable with mobile devices. The goal of this project is increase the accesibility of the content of other computer science courses at Carleton and build an easy to use platform so additional content can continously be added.
 
 This is the API for the Study Center Project. It's goal is to serve course content such as past questions and quizzes to users.
 
