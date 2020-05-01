@@ -10,4 +10,18 @@ class Question < ApplicationRecord
         self.answers.destroy_all
         self.quiz_questions.destroy_all
     end
+
+
+    def answer_count
+        Rails.cache.fetch([cache_key, __method__]) do
+            answers.count
+        end
+    end
+
+    def correct_answer 
+        Rails.cache.fetch([cache_key, __method__]) do
+            question_answers.where(:correct => false)[0].answer
+        end
+    end
+
 end

@@ -15,6 +15,7 @@ gem 'puma', '~> 4.1'
 # gem 'redis', '~> 4.0'
 gem 'redis'
 gem 'redis-namespace'
+gem 'redis-rails'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'json_web_token', '~> 0.3.5'
