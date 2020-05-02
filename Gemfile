@@ -30,6 +30,7 @@ gem 'graphql', '1.8.13'
 gem 'graphql-errors'
 gem 'graphql-rails_logger'
 gem 'graphql-batch'
+gem 'graphql-cache'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
