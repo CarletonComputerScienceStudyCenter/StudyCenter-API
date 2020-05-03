@@ -6,5 +6,8 @@ class User < ApplicationRecord
 
     has_many :user_saved_questions
     has_many :questions, through: :user_saved_questions
+
+    has_many :user_lecture_timestamps
+    has_many :lecture_timestamps, through: :user_lecture_timestamps
     
 end
