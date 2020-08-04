@@ -3,6 +3,8 @@ class Question < ApplicationRecord
     has_many :answers, through: :question_answers
     has_many :quiz_questions
     has_many :quizzes, through: :quiz_questions
+    has_many :question_tags
+    has_many :tags, through: :question_tags
     has_many :user_saved_questions
     #has_many :users, through: :user_saved_questions
     before_destroy :clear_dependants

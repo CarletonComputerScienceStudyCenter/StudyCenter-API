@@ -8,6 +8,7 @@ module Types
       field :correct_answer, Types::AnswerType, null: true
       field :quizzes, [Types::QuizType], null: true
       field :answers, [Types::AnswerType], null: true
+      field :tags, [Types::TagType], null: true
       field :answer_count, Integer, null: false
 
       def quizzes
@@ -16,6 +17,10 @@ module Types
 
       def answers  
         Loaders::HasManyLoader.for(Question, :answers).load(object)
+      end
+
+      def tags  
+        Loaders::HasManyLoader.for(Question, :tags).load(object)
       end
 
     end
