@@ -4,6 +4,7 @@ module Types
       field :title, String, null: false
       field :body, String, null: false
       field :render, String, null: false
+      field :pseudocode, String, null: false
       field :shuffle, Boolean, null: false
       field :correct_answer, Types::AnswerType, null: true
       field :quizzes, [Types::QuizType], null: true

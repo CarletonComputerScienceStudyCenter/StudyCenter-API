@@ -24,7 +24,7 @@ class Question < ApplicationRecord
 
     def correct_answer 
         Rails.cache.fetch([cache_key, __method__]) do
-            question_answers.where(:correct => false)[0].answer
+            self.question_answers.where(:correct => true)[0].answer
         end
     end
 

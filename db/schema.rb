@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_02_232108) do
+ActiveRecord::Schema.define(version: 2020_08_04_004938) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,9 +72,16 @@ ActiveRecord::Schema.define(version: 2020_05_02_232108) do
     t.index ["question_id"], name: "index_question_lecture_timestamps_on_question_id"
   end
 
+  create_table "question_tags", force: :cascade do |t|
+    t.integer "order_index"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "questions", force: :cascade do |t|
     t.string "title"
     t.text "body"
+    t.text "pseudocode"
     t.string "render"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -100,6 +107,12 @@ ActiveRecord::Schema.define(version: 2020_05_02_232108) do
     t.bigint "course_id"
     t.boolean "shuffle"
     t.index ["course_id"], name: "index_quizzes_on_course_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.text "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "user_lecture_timestamps", force: :cascade do |t|
