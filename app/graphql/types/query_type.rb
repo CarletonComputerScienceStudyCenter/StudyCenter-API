@@ -5,5 +5,6 @@ module Types
     field :quizzes, resolver: Queries::Quizzes
     field :quiz, resolver: Queries::Quiz
     field :courses, resolver: Queries::Courses
+    field :generate_midterm, resolver: Queries::GenerateMidterm
   end
 end

@@ -5,7 +5,7 @@ module Queries
       type [Types::QuizType], null: false
   
       def resolve()
-        ::Quiz.all
+        ::Quiz.all.order(:title)
       end
     end
 end

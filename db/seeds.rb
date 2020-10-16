@@ -11477,11 +11477,11 @@ QuestionAnswer.create(
   question_id: w19m03.id
 )
 
-=begin
-questionw19m04text = %q{
-Let $n \geq 8$ be an even integer and let $k$ be an integer with $2 \leq k \leq n/2$. Consider $k$-element subsets of the set $S = \{1, 2, ..., n\}$. How many such subsets contain at least two even numbers?
-}
 
+questionw19m04text = %q{
+  Let $n \geq 8$ be an even integer and let $k$ be an integer with $2 \leq k \leq n/2$. Consider $k$-element subsets of the set $S = \{1, 2, ..., n\}$. How many such subsets contain at least two even numbers?
+  }
+  
 questionw19m04pseudocode = %q{
 
 }
@@ -11503,7 +11503,7 @@ QuizQuestion.create(
 )
 
 answerw19m040text = %q{
-${{n}\choose{k} - {{n/2}\choose{k-1} - {{\frac{n}{2}}\choose{k}}$
+${{n}\choose{k}} - {{n/2}\choose{k-1}} - {{\frac{n}{2}}\choose{k}}$
 }
 
 w19m040 = Answer.create(
@@ -11520,7 +11520,7 @@ QuestionAnswer.create(
 
 
 answerw19m041text = %q{
-${{n}\choose{k} - {{n/2}\choose{k-1} - {{\frac{n}{2}}\choose{k-1}}$
+${{n}\choose{k}} - {{n/2}\choose{k-1}} - {{\frac{n}{2}}\choose{k-1}}$
 }
 
 w19m041 = Answer.create(
@@ -11537,7 +11537,7 @@ QuestionAnswer.create(
 
 
 answerw19m042text = %q{
-${{n}\choose{k} - {{n/2}\choose{k} - {{\frac{n}{2}}\choose{k}}$
+${{n}\choose{k}} - {{n/2}\choose{k}} - {{\frac{n}{2}}\choose{k}}$
 }
 
 w19m042 = Answer.create(
@@ -11554,7 +11554,7 @@ QuestionAnswer.create(
 
 
 answerw19m043text = %q{
-${{n}\choose{k} - {{n/2}\choose{k} - {{\frac{n}{2}}\choose{k-1}}$
+${{n}\choose{k}} - {{n/2}\choose{k}} - {{\frac{n}{2}}\choose{k-1}}$
 }
 
 w19m043 = Answer.create(
@@ -11568,7 +11568,7 @@ QuestionAnswer.create(
   answer_id: w19m043.id,
   question_id: w19m04.id
 )
-=end
+
 
 questionw19m05text = %q{
 In a group of 100 students, 
@@ -12748,11 +12748,16 @@ QuestionAnswer.create(
   question_id: w19m16.id
 )
 
-=begin
+
 questionw19m17text = %q{
-
-}
-
+  <div>This midterm has 17 questions. For each question, four options are given, exactly one of which is correct.
+  Assume that you answer each question, by choosing one of the four options uniformly at random.</div>
+  <br>
+  <div>Let A be the event</div>
+  <p align="center">$A = $ "you answer at least 16 questions correctly".</p>
+  What is $\text{Pr}(A)$?
+  }
+  
 questionw19m17pseudocode = %q{
 
 }
@@ -12774,7 +12779,7 @@ QuizQuestion.create(
 )
 
 answerw19m170text = %q{
-
+${\frac{4^{17}}{52}}$
 }
 
 w19m170 = Answer.create(
@@ -12791,7 +12796,7 @@ QuestionAnswer.create(
 
 
 answerw19m171text = %q{
-
+${\frac{51}{4^{17}}}$
 }
 
 w19m171 = Answer.create(
@@ -12808,7 +12813,7 @@ QuestionAnswer.create(
 
 
 answerw19m172text = %q{
-
+${\frac{49}{4^{17}}}$
 }
 
 w19m172 = Answer.create(
@@ -12825,7 +12830,7 @@ QuestionAnswer.create(
 
 
 answerw19m173text = %q{
-
+${\frac{52}{4^{17}}}$
 }
 
 w19m173 = Answer.create(
@@ -12839,7 +12844,6 @@ QuestionAnswer.create(
   answer_id: w19m173.id,
   question_id: w19m17.id
 )
-=end
 
 w18m = Quiz.create(
   title: 'Midterm Winter 2018',
