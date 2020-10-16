@@ -11669,7 +11669,7 @@ QuestionAnswer.create(
 
 
 questionw19m06text = %q{
-Let $n \geq 1$ be an integer. A group of $n$ students write an exam. Each student receives a grade, which is an element of the set $\{A, B, C, D, F\}. 
+Let $n \geq 1$ be an integer. A group of $n$ students write an exam. Each student receives a grade, which is an element of the set $\{A, B, C, D, F\}$. 
 What is the minimum value for $n$, such that there must be at least four students who receive the same grade?
 }
 
@@ -12588,7 +12588,7 @@ QuizQuestion.create(
 )
 
 answerw19m150text = %q{
-$\frac{{75}\choose{50} \cdot 2^{25}}{3^{75}}$
+$\frac{{{75}\choose{50}} \cdot 2^{25}}{3^{75}}$
 }
 
 w19m150 = Answer.create(
@@ -12605,7 +12605,7 @@ QuestionAnswer.create(
 
 
 answerw19m151text = %q{
-$\frac{3^{75}}{{75}\choose{50} \cdot 2^{25}}$
+$\frac{3^{75}}{{{75}\choose{50}} \cdot 2^{25}}$
 }
 
 w19m151 = Answer.create(
@@ -12639,7 +12639,7 @@ QuestionAnswer.create(
 
 
 answerw19m153text = %q{
-$\frac{{75}\choose{50} \cdot 3^{25}}{3^{75}}$
+$\frac{{{75}\choose{50}} \cdot 3^{25}}{3^{75}}$
 }
 
 w19m153 = Answer.create(
