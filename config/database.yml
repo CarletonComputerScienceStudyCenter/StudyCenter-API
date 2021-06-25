@@ -12,14 +12,14 @@ development:
   database: studycenter_api_development
   username: postgres
   password: 1234
-  host: db
+  host: <%= ENV['STUDYCENTER_API_DATABASE_HOST'] %>
 
 test:
   <<: *default
   database: studycenter_api_test
   username: postgres
   password: 1234
-  host: db
+  host: <%= ENV['STUDYCENTER_API_DATABASE_HOST'] %>
 
 production:
   <<: *default
