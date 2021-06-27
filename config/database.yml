@@ -5,7 +5,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: postgres
   password: 1234
-  host: db
+  host: <%= ENV['STUDYCENTER_API_DATABASE_HOST'] %>
 
 development:
   <<: *default
@@ -28,4 +28,4 @@ production:
   password: <%= ENV['STUDYCENTER_API_DATABASE_PASSWORD'] %>
   username: postgres
   password: 1234
-  host: db
+  host: <%= ENV['STUDYCENTER_API_DATABASE_HOST'] %>
