@@ -3,8 +3,6 @@ set -e
 
 env
 
-sleep 1000
-
 # Remove a potentially pre-existing server.pid for Rails.
 rm -f tmp/pids/server.pid
 
