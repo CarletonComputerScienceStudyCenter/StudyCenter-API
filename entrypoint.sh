@@ -3,6 +3,8 @@ set -e
 
 env
 
+sleep 10
+
 curl $STUDYCENTER_API_DATABASE_HOST:5432
 
 # Remove a potentially pre-existing server.pid for Rails.
