@@ -1,8 +1,6 @@
 #!/bin/bash
 set -e
 
-env
-
 # Remove a potentially pre-existing server.pid for Rails.
 rm -f tmp/pids/server.pid
 
